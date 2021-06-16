@@ -3,17 +3,17 @@
 }
 
 .qBox {
-  background-color: whitesmoke;
+  background-color: ivory;
   text-align: center;
   border-radius: 20px;
-  font-size: 26px;
+  font-size: 29px;
   width: 80%;
-  font-weight: bold;
-  color: darkslateblue;
+  /* font-weight: bold; */
+  color: mediumvioletred;
 }
 
 .answerList {
-  background-color: whitesmoke;
+  background-color: ivory;
   border-radius: 20px;
   display: block;
   width: 80%;
@@ -24,8 +24,8 @@
 
 /* 버튼인지 아닌지 구분할수 있게 마우스를 올렸을때 나오는 효과 */
 .answerList:hover, .answerList:focus {
-  background-color: beige;
-  color: green;
+  background-color: white;
+  color: crimson;
 }
 
 .status {
