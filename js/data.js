@@ -1,6 +1,6 @@
-    //  mouse,0 
-    //  cow, 1 
-    //  tiger,2 
+    //  루테인,0 
+    //  칼슘, 1 
+    //  ,2 
     //  rabbit, 3 
     //  dragon ,4 
     //  snake,5 
