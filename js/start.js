@@ -1,5 +1,7 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
+const result = document.querySelector("#result");
+const select = [];
 
 const endPoint = 12;
 
@@ -17,9 +19,6 @@ function goResult(){
     setResult();
 }
 
-function goResult(){
-  
-}
 
 function addAnswer(answerText, qIdx){
   var a = document.querySelector('.answerBox');
@@ -50,13 +49,13 @@ function addAnswer(answerText, qIdx){
 }
 
 function goNext(qIdx){
-  if(++qIdx === endPoint){
+  if(qIdx+1 === endPoint){
     goResult();
   }
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
   for(let i in qnaList[qIdx].a){
-    addAnswer(qnaList[qIdx].a[i].answer, qIdx);
+    addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
   var status = document.querySelector('.statusBar');
   status.style.width = (100/endPoint) * (qIdx+1) + '%';
