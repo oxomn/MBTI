@@ -17,6 +17,10 @@ function goResult(){
     setResult();
 }
 
+function goResult(){
+  
+}
+
 function addAnswer(answerText, qIdx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
@@ -46,6 +50,9 @@ function addAnswer(answerText, qIdx){
 }
 
 function goNext(qIdx){
+  if(++qIdx === endPoint){
+    goResult();
+  }
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
   for(let i in qnaList[qIdx].a){
