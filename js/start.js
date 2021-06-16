@@ -1,16 +1,32 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
-const select = [0,0,0,0,0,0,0,0,0,0,0,0];
 
 const endPoint = 12;
+const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function calResult(){
- 
+  console.log(select);
   var result = select.indexOf(Math.max(...select));
   return result;
 }
 
+function setResult(){
+  let point = calResult();
+  const resultName = document.querySelector('.resultname');
+  resultName.innerHTML = infoList[point].name;
+
+  var resultImg = document.createElement('img');
+  const imgDiv = document.querySelector('#resultImg');
+  var imgURL = 'img/image-' + point + '.png';
+  resultImg.src = imgURL;
+  resultImg.alt = point;
+  resultImg.classList.add('img-fluid');
+  imgDiv.appendChild(resultImg);
+
+  const resultDesc = document.querySelector('.resultDesc');
+  resultDesc.innerHTML = infoList[point].desc;
+}
 
 function goResult(){
   qna.style.WebkitAnimation = "fadeOut 1s";
@@ -22,11 +38,8 @@ function goResult(){
       qna.style.display = "none";
       result.style.display = "block"
     }, 450)})
-    
-    console.log(select);
-    calResult();
+    setResult();
 }
-
 
 function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
